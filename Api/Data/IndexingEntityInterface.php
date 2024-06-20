@@ -134,4 +134,11 @@ interface IndexingEntityInterface
      * @return void
      */
     public function setIsIndexable(bool $isIndexable): void;
+
+    /**
+     * @param mixed[] $keys
+     *
+     * @return mixed[]
+     */
+    public function toArray(array $keys = []); //phpcs:ignore SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint, Generic.Files.LineLength.TooLong
 }

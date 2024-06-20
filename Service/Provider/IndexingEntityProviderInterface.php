@@ -11,6 +11,7 @@ namespace Klevu\IndexingApi\Service\Provider;
 use Klevu\Indexing\Model\ResourceModel\IndexingEntity\Collection;
 use Klevu\IndexingApi\Api\Data\IndexingEntityInterface;
 use Klevu\IndexingApi\Model\Source\Actions;
+use Magento\Framework\DataObject;
 
 interface IndexingEntityProviderInterface
 {
@@ -20,8 +21,9 @@ interface IndexingEntityProviderInterface
      * @param int[]|null $entityIds
      * @param Actions|null $nextAction
      * @param bool|null $isIndexable
+     * @param array<string, string>|null $sorting [SortOrder::DIRECTION => SortOrder::SORT_ASC, SortOrder::FIELD => '']
      *
-     * @return IndexingEntityInterface[]
+     * @return array<IndexingEntityInterface&DataObject>
      */
     public function get(
         ?string $entityType = null,
@@ -29,6 +31,7 @@ interface IndexingEntityProviderInterface
         ?array $entityIds = [],
         ?Actions $nextAction = null,
         ?bool $isIndexable = null,
+        ?array $sorting = [],
     ): array;
 
     /**
