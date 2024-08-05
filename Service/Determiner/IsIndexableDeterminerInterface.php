@@ -17,8 +17,13 @@ interface IsIndexableDeterminerInterface
     /**
      * @param ExtensibleDataInterface|PageInterface $entity
      * @param StoreInterface $store
+     * @param string $entitySubtype
      *
      * @return bool
      */
-    public function execute(ExtensibleDataInterface|PageInterface $entity, StoreInterface $store): bool;
+    public function execute(
+        ExtensibleDataInterface|PageInterface $entity,
+        StoreInterface $store,
+        string $entitySubtype = '',
+    ): bool;
 }

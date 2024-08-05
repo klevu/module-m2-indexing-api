@@ -18,12 +18,13 @@ class StandardAttributeTest extends TestCase
     {
         $this->assertSame(expected: IndexType::NO_INDEX, actual: StandardAttribute::BOOSTING->indexType());
         $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::CATEGORY_PATH->indexType());
-        $this->assertSame(expected: IndexType::NO_INDEX, actual: StandardAttribute::COLORS->indexType());
         $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::DESCRIPTION->indexType());
-        $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::IMAGES->indexType());
+        $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::IMAGE->indexType());
+        $this->assertSame(expected: IndexType::NO_INDEX, actual: StandardAttribute::IMAGES->indexType());
         $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::IN_STOCK->indexType());
         $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::NAME->indexType());
-        $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::PRICES->indexType());
+        $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::PRICE->indexType());
+        $this->assertSame(expected: IndexType::NO_INDEX, actual: StandardAttribute::PRICES->indexType());
         $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::RATING->indexType());
         $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::RATING_COUNT->indexType());
         $this->assertSame(expected: IndexType::INDEX, actual: StandardAttribute::SHORT_DESCRIPTION->indexType());
@@ -46,17 +47,17 @@ class StandardAttributeTest extends TestCase
             actual: $indexTypesArray[ StandardAttribute::CATEGORY_PATH->value],
         );
 
-        $this->assertArrayHasKey(key: StandardAttribute::COLORS->value, array: $indexTypesArray);
-        $this->assertSame(expected: IndexType::NO_INDEX, actual: $indexTypesArray[ StandardAttribute::COLORS->value]);
-
         $this->assertArrayHasKey(key: StandardAttribute::DESCRIPTION->value, array: $indexTypesArray);
         $this->assertSame(
             expected: IndexType::INDEX,
             actual: $indexTypesArray[ StandardAttribute::DESCRIPTION->value],
         );
 
+        $this->assertArrayHasKey(key: StandardAttribute::IMAGE->value, array: $indexTypesArray);
+        $this->assertSame(expected: IndexType::INDEX, actual: $indexTypesArray[ StandardAttribute::IMAGE->value]);
+
         $this->assertArrayHasKey(key: StandardAttribute::IMAGES->value, array: $indexTypesArray);
-        $this->assertSame(expected: IndexType::INDEX, actual: $indexTypesArray[ StandardAttribute::IMAGES->value]);
+        $this->assertSame(expected: IndexType::NO_INDEX, actual: $indexTypesArray[ StandardAttribute::IMAGES->value]);
 
         $this->assertArrayHasKey(key: StandardAttribute::IN_STOCK->value, array: $indexTypesArray);
         $this->assertSame(expected: IndexType::INDEX, actual: $indexTypesArray[ StandardAttribute::IN_STOCK->value]);
@@ -64,8 +65,11 @@ class StandardAttributeTest extends TestCase
         $this->assertArrayHasKey(key: StandardAttribute::NAME->value, array: $indexTypesArray);
         $this->assertSame(expected: IndexType::INDEX, actual: $indexTypesArray[ StandardAttribute::NAME->value]);
 
+        $this->assertArrayHasKey(key: StandardAttribute::PRICE->value, array: $indexTypesArray);
+        $this->assertSame(expected: IndexType::INDEX, actual: $indexTypesArray[ StandardAttribute::PRICE->value]);
+
         $this->assertArrayHasKey(key: StandardAttribute::PRICES->value, array: $indexTypesArray);
-        $this->assertSame(expected: IndexType::INDEX, actual: $indexTypesArray[ StandardAttribute::PRICES->value]);
+        $this->assertSame(expected: IndexType::NO_INDEX, actual: $indexTypesArray[ StandardAttribute::PRICES->value]);
 
         $this->assertArrayHasKey(key: StandardAttribute::RATING->value, array: $indexTypesArray);
         $this->assertSame(expected: IndexType::INDEX, actual: $indexTypesArray[ StandardAttribute::RATING->value]);

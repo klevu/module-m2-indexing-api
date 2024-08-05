@@ -27,4 +27,9 @@ interface EntityIndexingRecordInterface
      * @return ExtensibleDataInterface|PageInterface|null
      */
     public function getParent(): ExtensibleDataInterface|PageInterface|null;
+
+    /**
+     * @return string
+     */
+    public function getAction(): string;
 }
