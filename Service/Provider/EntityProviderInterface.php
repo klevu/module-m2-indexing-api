@@ -19,4 +19,9 @@ interface EntityProviderInterface
      * @return \Generator|null
      */
     public function get(?StoreInterface $store = null, ?array $entityIds = []): ?\Generator;
+
+    /**
+     * @return string
+     */
+    public function getEntitySubtype(): string;
 }

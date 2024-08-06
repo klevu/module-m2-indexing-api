@@ -22,6 +22,8 @@ interface IndexingEntityProviderInterface
      * @param Actions|null $nextAction
      * @param bool|null $isIndexable
      * @param array<string, string>|null $sorting [SortOrder::DIRECTION => SortOrder::SORT_ASC, SortOrder::FIELD => '']
+     * @param int|null $pageSize
+     * @param int|null $currentPage
      *
      * @return array<IndexingEntityInterface&DataObject>
      */
@@ -32,6 +34,8 @@ interface IndexingEntityProviderInterface
         ?Actions $nextAction = null,
         ?bool $isIndexable = null,
         ?array $sorting = [],
+        ?int $pageSize = null,
+        ?int $currentPage = null,
     ): array;
 
     /**

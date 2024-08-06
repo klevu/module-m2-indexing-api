@@ -28,4 +28,16 @@ enum IndexType: int
             self::INDEX => 'Yes',
         };
     }
+
+    /**
+     * @return bool
+     */
+    public function isIndexable(): bool
+    {
+        return match($this) //phpcs:ignore PHPCompatibility.Variables.ForbiddenThisUseContexts.OutsideObjectContext
+        {
+            self::NO_INDEX => false,
+            self::INDEX => true,
+        };
+    }
 }

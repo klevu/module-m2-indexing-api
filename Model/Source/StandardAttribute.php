@@ -22,11 +22,12 @@ enum StandardAttribute: string
 
     case BOOSTING = 'boosting';
     case CATEGORY_PATH = 'categoryPath';
-    case COLORS = 'colors';
     case DESCRIPTION = 'description';
+    case IMAGE = 'image';
     case IMAGES = 'images';
     case IN_STOCK = 'inStock';
     case NAME = 'name';
+    case PRICE = 'price';
     case PRICES = 'prices';
     case RATING = 'rating';
     case RATING_COUNT = 'ratingCount';
@@ -45,12 +46,13 @@ enum StandardAttribute: string
         {
             self::BOOSTING => IndexType::NO_INDEX,
             self::CATEGORY_PATH => IndexType::INDEX,
-            self::COLORS => IndexType::NO_INDEX,
             self::DESCRIPTION => IndexType::INDEX,
-            self::IMAGES => IndexType::INDEX,
+            self::IMAGE => IndexType::INDEX,
+            self::IMAGES => IndexType::NO_INDEX,
             self::IN_STOCK => IndexType::INDEX,
             self::NAME => IndexType::INDEX,
-            self::PRICES => IndexType::INDEX,
+            self::PRICE => IndexType::INDEX,
+            self::PRICES => IndexType::NO_INDEX,
             self::RATING => IndexType::INDEX,
             self::RATING_COUNT => IndexType::INDEX,
             self::SHORT_DESCRIPTION => IndexType::INDEX,
