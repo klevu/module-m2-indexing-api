@@ -11,74 +11,38 @@ namespace Klevu\IndexingApi\Model\Source;
 use Klevu\Configuration\Traits\EnumTrait;
 
 /**
- *  Reserved attribute names in klevu indexing.
- *  Custom attributes can not be created with these names.
- *  Some of which we may not currently index from this plugin by default,
- *  however they are reserved for possible future implementation
+ * Reserved attribute names in klevu indexing.
+ * Custom attributes can not be created with these names.
+ * Some of which we may not currently index from this plugin by default,
+ * however they are reserved for possible future implementation
+ * During normal operation this data is retrieved via an API call,
+ * however this list is used when that is not possible, e.g. before integration
  */
 enum StandardAttribute: string
 {
     use EnumTrait;
 
-    case BOOSTING = 'boosting';
-    case CATEGORY_PATH = 'categoryPath';
+    case ADDITIONAL_DATA_TO_RETURN = 'additionalDataToReturn';
+    case CATEGORY = 'category';
+    case CURRENCY = 'currency';
     case DESCRIPTION = 'description';
+    case ID = 'id';
     case IMAGE = 'image';
-    case IMAGES = 'images';
+    case IMAGE_HOVER = 'imageHover';
     case IN_STOCK = 'inStock';
+    case ITEM_GROUP_ID = 'itemGroupId';
+    case LIST_CATEGORY = 'listCategory';
     case NAME = 'name';
     case PRICE = 'price';
-    case PRICES = 'prices';
     case RATING = 'rating';
     case RATING_COUNT = 'ratingCount';
+    case SALE_PRICE = 'salePrice';
     case SHORT_DESCRIPTION = 'shortDescription';
     case SKU = 'sku';
+    case START_PRICE = 'startPrice';
+    case SWATCHES_INFO = 'swatchesInfo';
     case TAGS = 'tags';
+    case TO_PRICE = 'toPrice';
     case URL = 'url';
     case VISIBILITY = 'visibility';
-
-    /**
-     * @return IndexType
-     */
-    public function indexType(): IndexType
-    {
-        return match ($this) //phpcs:ignore PHPCompatibility.Variables.ForbiddenThisUseContexts.OutsideObjectContext
-        {
-            self::BOOSTING => IndexType::NO_INDEX,
-            self::CATEGORY_PATH => IndexType::INDEX,
-            self::DESCRIPTION => IndexType::INDEX,
-            self::IMAGE => IndexType::INDEX,
-            self::IMAGES => IndexType::NO_INDEX,
-            self::IN_STOCK => IndexType::INDEX,
-            self::NAME => IndexType::INDEX,
-            self::PRICE => IndexType::INDEX,
-            self::PRICES => IndexType::NO_INDEX,
-            self::RATING => IndexType::INDEX,
-            self::RATING_COUNT => IndexType::INDEX,
-            self::SHORT_DESCRIPTION => IndexType::INDEX,
-            self::SKU => IndexType::INDEX,
-            self::TAGS => IndexType::NO_INDEX,
-            self::URL => IndexType::INDEX,
-            self::VISIBILITY => IndexType::INDEX,
-        };
-    }
-
-    /**
-     * @return array<string, IndexType>
-     */
-    public static function indexTypesArray(): array
-    {
-        return array_combine(self::values(), self::indexTypes());
-    }
-
-    /**
-     * @return IndexType[]
-     */
-    private static function indexTypes(): array
-    {
-        return array_map(
-            static fn (self $enum) => $enum->indexType(),
-            self::cases(),
-        );
-    }
 }

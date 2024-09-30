@@ -15,9 +15,10 @@ interface AttributeIndexingDeleteRecordCreatorServiceInterface
 {
     /**
      * @param string $attributeCode
+     * @param string $apiKey
      *
      * @return SdkAttributeInterface
      * @throws AttributeMappingMissingException
      */
-    public function execute(string $attributeCode): SdkAttributeInterface;
+    public function execute(string $attributeCode, string $apiKey): SdkAttributeInterface;
 }

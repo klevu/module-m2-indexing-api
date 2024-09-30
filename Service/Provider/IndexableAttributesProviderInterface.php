@@ -13,13 +13,17 @@ use Magento\Eav\Api\Data\AttributeInterface;
 interface IndexableAttributesProviderInterface
 {
     /**
+     * @param string $apiKey
+     *
      * @return AttributeInterface[]
      */
-    public function get(): array;
+    public function get(string $apiKey): array;
 
     /**
+     * @param string $apiKey
+     *
      * @return string[]
      */
-    public function getAttributeCodes(): array;
+    public function getAttributeCodes(string $apiKey): array;
 
 }

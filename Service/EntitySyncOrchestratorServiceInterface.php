@@ -13,15 +13,15 @@ use Klevu\IndexingApi\Api\Data\IndexerResultInterface;
 interface EntitySyncOrchestratorServiceInterface
 {
     /**
-     * @param string|null $entityType
-     * @param string|null $apiKey
+     * @param string[] $entityTypes
+     * @param string[] $apiKeys
      * @param string|null $via
      *
      * @return IndexerResultInterface[]
      */
     public function execute(
-        ?string $entityType = null,
-        ?string $apiKey = null,
+        array $entityTypes = [],
+        array $apiKeys = [],
         ?string $via = null,
     ): array;
 }

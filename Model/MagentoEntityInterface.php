@@ -21,6 +21,11 @@ interface MagentoEntityInterface
     public function getEntityParentId(): ?int;
 
     /**
+     * @return string|null
+     */
+    public function getEntitySubtype(): ?string;
+
+    /**
      * @return string
      */
     public function getApiKey(): string;

@@ -22,10 +22,15 @@ interface EntityDiscoveryProviderInterface
     /**
      * @param string[]|null $apiKeys
      * @param int[]|null $entityIds
+     * @param string[]|null $entitySubtypes
      *
      * @return MagentoEntityInterface[][]
      * @throws NoSuchEntityException
      * @throws StoreApiKeyException
      */
-    public function getData(?array $apiKeys = [], ?array $entityIds = []): array;
+    public function getData(
+        ?array $apiKeys = [],
+        ?array $entityIds = [],
+        ?array $entitySubtypes = [],
+    ): array;
 }

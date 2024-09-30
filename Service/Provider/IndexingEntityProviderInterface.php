@@ -24,6 +24,7 @@ interface IndexingEntityProviderInterface
      * @param array<string, string>|null $sorting [SortOrder::DIRECTION => SortOrder::SORT_ASC, SortOrder::FIELD => '']
      * @param int|null $pageSize
      * @param int|null $currentPage
+     * @param string[]|null $entitySubtypes
      *
      * @return array<IndexingEntityInterface&DataObject>
      */
@@ -36,6 +37,7 @@ interface IndexingEntityProviderInterface
         ?array $sorting = [],
         ?int $pageSize = null,
         ?int $currentPage = null,
+        ?array $entitySubtypes = [],
     ): array;
 
     /**
