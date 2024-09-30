@@ -73,4 +73,17 @@ interface EntityInterface
      * @throws \InvalidArgumentException
      */
     public function setAttributes(array $attributes): void;
+
+    /**
+     * @return string[]
+     */
+    public function getEntitySubtypes(): array;
+
+    /**
+     * @param string[] $entitySubtypes
+     *
+     * @return void
+     * @throws \InvalidArgumentException
+     */
+    public function setEntitySubtypes(array $entitySubtypes): void;
 }

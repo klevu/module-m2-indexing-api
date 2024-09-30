@@ -20,6 +20,7 @@ interface AttributeIndexingRecordCreatorServiceInterface
      *
      * @return SdkAttributeInterface
      * @throws AttributeMappingMissingException
+     * @throws \TypeError
      */
     public function execute(EavAttributeInterface $attribute, string $apiKey): SdkAttributeInterface;
 }

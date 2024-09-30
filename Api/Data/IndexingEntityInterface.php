@@ -40,6 +40,18 @@ interface IndexingEntityInterface
     public function setTargetEntityType(string $entityType): void;
 
     /**
+     * @return string|null
+     */
+    public function getTargetEntitySubtype(): ?string;
+
+    /**
+     * @param string|null $entitySubtype
+     *
+     * @return void
+     */
+    public function setTargetEntitySubtype(?string $entitySubtype): void;
+
+    /**
      * @return int
      */
     public function getTargetId(): int;

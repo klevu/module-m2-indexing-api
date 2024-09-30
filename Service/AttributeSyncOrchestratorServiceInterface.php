@@ -13,13 +13,13 @@ use Klevu\IndexingApi\Api\Data\SyncResultInterface;
 interface AttributeSyncOrchestratorServiceInterface
 {
     /**
-     * @param string|null $attributeType
-     * @param string|null $apiKey
+     * @param string[] $attributeTypes
+     * @param string[] $apiKeys
      *
      * @return SyncResultInterface[][][]
      */
     public function execute(
-        ?string $attributeType = null,
-        ?string $apiKey = null,
+        array $attributeTypes = [],
+        array $apiKeys = [],
     ): array;
 }

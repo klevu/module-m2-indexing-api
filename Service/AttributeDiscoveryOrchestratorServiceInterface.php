@@ -13,15 +13,15 @@ use Klevu\IndexingApi\Api\Data\DiscoveryResultInterface;
 interface AttributeDiscoveryOrchestratorServiceInterface
 {
     /**
-     * @param string|null $attributeType
-     * @param string[]|null $apiKeys
+     * @param string[] $attributeTypes
+     * @param string[] $apiKeys
      * @param int[]|null $attributeIds
      *
      * @return DiscoveryResultInterface
      */
     public function execute(
-        ?string $attributeType = null,
-        ?array $apiKeys = [],
+        array $attributeTypes = [],
+        array $apiKeys = [],
         ?array $attributeIds = [],
     ): DiscoveryResultInterface;
 }

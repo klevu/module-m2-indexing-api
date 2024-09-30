@@ -16,8 +16,14 @@ interface FilterEntitiesToSetToNotIndexableServiceInterface
      * @param MagentoEntityInterface[][] $magentoEntitiesByApiKey
      * @param string $type
      * @param int[]|null $entityIds
+     * @param string[]|null $entitySubtypes
      *
      * @return int[]
      */
-    public function execute(array $magentoEntitiesByApiKey, string $type, ?array $entityIds = []): array;
+    public function execute(
+        array $magentoEntitiesByApiKey,
+        string $type,
+        ?array $entityIds = [],
+        ?array $entitySubtypes = [],
+    ): array;
 }

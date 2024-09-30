@@ -18,8 +18,8 @@ class IndexDataType implements OptionSourceInterface
     public function toOptionArray(): array
     {
         return [
-            ['value' => IndexType::NO_INDEX->value, 'label' => __(IndexType::NO_INDEX->label())],
             ['value' => IndexType::INDEX->value, 'label' => __(IndexType::INDEX->label())],
+            ['value' => IndexType::NO_INDEX->value, 'label' => __(IndexType::NO_INDEX->label())],
         ];
     }
 }

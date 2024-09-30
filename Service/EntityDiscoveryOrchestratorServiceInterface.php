@@ -13,15 +13,17 @@ use Klevu\IndexingApi\Api\Data\DiscoveryResultInterface;
 interface EntityDiscoveryOrchestratorServiceInterface
 {
     /**
-     * @param string|null $entityType
-     * @param string[]|null $apiKeys
+     * @param string[] $entityTypes
+     * @param string[] $apiKeys
      * @param int[]|null $entityIds
+     * @param string[]|null $entitySubtypes
      *
      * @return DiscoveryResultInterface
      */
     public function execute(
-        ?string $entityType = null,
-        ?array $apiKeys = [],
+        array $entityTypes = [],
+        array $apiKeys = [],
         ?array $entityIds = [],
+        ?array $entitySubtypes = [],
     ): DiscoveryResultInterface;
 }

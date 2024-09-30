@@ -8,20 +8,20 @@ declare(strict_types=1);
 
 namespace Klevu\IndexingApi\Service;
 
-interface FilterEntitiesToUpdateServiceInterface
+use Klevu\IndexingApi\Model\MagentoAttributeInterface;
+
+interface FilterAttributesToSetToNotIndexableServiceInterface
 {
     /**
+     * @param MagentoAttributeInterface[][] $magentoAttributesByApiKey
      * @param string $type
-     * @param int[] $entityIds
-     * @param string[] $apiKeys
-     * @param string[]|null $entitySubtypes
+     * @param int[] $attributeIds
      *
      * @return int[]
      */
     public function execute(
+        array $magentoAttributesByApiKey,
         string $type,
-        array $entityIds,
-        array $apiKeys,
-        ?array $entitySubtypes = [],
+        array $attributeIds = [],
     ): array;
 }
