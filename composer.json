@@ -2,7 +2,7 @@
     "name": "klevu/module-m2-indexing-api",
     "description": "Provides interfaces for Klevu indexing module",
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "require": {
         "magento/module-catalog": "^104.0.4",
         "magento/framework": "^103.0.4",
