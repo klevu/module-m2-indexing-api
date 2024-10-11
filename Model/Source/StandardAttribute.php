@@ -24,6 +24,7 @@ enum StandardAttribute: string
 
     case ADDITIONAL_DATA_TO_RETURN = 'additionalDataToReturn';
     case CATEGORY = 'category';
+    case CATEGORY_PATH = 'categoryPath';
     case CURRENCY = 'currency';
     case DESCRIPTION = 'description';
     case ID = 'id';
