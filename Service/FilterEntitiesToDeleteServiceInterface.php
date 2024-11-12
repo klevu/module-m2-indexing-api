@@ -8,22 +8,22 @@ declare(strict_types=1);
 
 namespace Klevu\IndexingApi\Service;
 
-use Klevu\IndexingApi\Model\MagentoEntityInterface;
+use Klevu\IndexingApi\Api\Data\IndexingEntityInterface;
 
 interface FilterEntitiesToDeleteServiceInterface
 {
     /**
-     * @param MagentoEntityInterface[][] $magentoEntitiesByApiKey
+     * @param IndexingEntityInterface[] $klevuIndexingEntities
      * @param string $type
-     * @param int[]|null $entityIds
-     * @param string[]|null $entitySubtypes
+     * @param string[] $apiKeys
+     * @param string[] $entitySubtypes
      *
      * @return int[]
      */
     public function execute(
-        array $magentoEntitiesByApiKey,
+        array $klevuIndexingEntities,
         string $type,
-        ?array $entityIds = [],
-        ?array $entitySubtypes = [],
+        array $apiKeys = [],
+        array $entitySubtypes = [],
     ): array;
 }

@@ -13,11 +13,19 @@ use Klevu\IndexingApi\Model\MagentoEntityInterface;
 interface FilterEntitiesToSetToIndexableServiceInterface
 {
     /**
-     * @param MagentoEntityInterface[][] $magentoEntitiesByApiKey
+     * @param MagentoEntityInterface[] $magentoEntities
      * @param string $type
+     * @param string $apiKey
      * @param int[]|null $entityIds
+     * @param string[]|null $entitySubtypes
      *
      * @return int[]
      */
-    public function execute(array $magentoEntitiesByApiKey, string $type, ?array $entityIds = []): array;
+    public function execute(
+        array $magentoEntities,
+        string $type,
+        string $apiKey,
+        ?array $entityIds = [],
+        ?array $entitySubtypes = [],
+    ): array;
 }
