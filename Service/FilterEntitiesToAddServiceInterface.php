@@ -13,10 +13,17 @@ use Klevu\IndexingApi\Model\MagentoEntityInterface;
 interface FilterEntitiesToAddServiceInterface
 {
     /**
-     * @param MagentoEntityInterface[][] $magentoEntitiesByApiKey
+     * @param MagentoEntityInterface[] $magentoEntities
      * @param string $type
+     * @param string $apiKey
+     * @param string[] $entitySubtypes
      *
-     * @return MagentoEntityInterface[][]
+     * @return \Generator<MagentoEntityInterface>
      */
-    public function execute(array $magentoEntitiesByApiKey, string $type): array;
+    public function execute(
+        array $magentoEntities,
+        string $type,
+        string $apiKey,
+        array $entitySubtypes = [],
+    ): \Generator;
 }

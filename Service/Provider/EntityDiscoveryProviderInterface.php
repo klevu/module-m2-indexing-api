@@ -24,7 +24,7 @@ interface EntityDiscoveryProviderInterface
      * @param int[]|null $entityIds
      * @param string[]|null $entitySubtypes
      *
-     * @return MagentoEntityInterface[][]
+     * @return \Generator<string, \Generator<MagentoEntityInterface[]>>
      * @throws NoSuchEntityException
      * @throws StoreApiKeyException
      */
@@ -32,5 +32,10 @@ interface EntityDiscoveryProviderInterface
         ?array $apiKeys = [],
         ?array $entityIds = [],
         ?array $entitySubtypes = [],
-    ): array;
+    ): \Generator;
+
+    /**
+     * @return string[]
+     */
+    public function getEntityProviderTypes(): array;
 }

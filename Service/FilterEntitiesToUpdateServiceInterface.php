@@ -13,7 +13,7 @@ interface FilterEntitiesToUpdateServiceInterface
     /**
      * @param string $type
      * @param int[] $entityIds
-     * @param string[] $apiKeys
+     * @param string $apiKey
      * @param string[]|null $entitySubtypes
      *
      * @return int[]
@@ -21,7 +21,7 @@ interface FilterEntitiesToUpdateServiceInterface
     public function execute(
         string $type,
         array $entityIds,
-        array $apiKeys,
+        string $apiKey,
         ?array $entitySubtypes = [],
     ): array;
 }
