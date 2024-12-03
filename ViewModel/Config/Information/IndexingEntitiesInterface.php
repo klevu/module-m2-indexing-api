@@ -18,7 +18,7 @@ interface IndexingEntitiesInterface extends FieldsetInterface
     public function hasEntities(): bool;
 
     /**
-     * @return mixed[][][]
+     * @return array<string, array<string, array<string, string>>>
      */
     public function getEntities(): array;
 }

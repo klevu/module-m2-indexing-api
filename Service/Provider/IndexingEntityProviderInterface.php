@@ -55,4 +55,26 @@ interface IndexingEntityProviderInterface
         ?string $apiKey = null,
         ?array $pairs = [],
     ): Collection;
+
+    /**
+     * @param string|null $entityType
+     * @param string|null $apiKey
+     * @param Actions|null $nextAction
+     * @param bool|null $isIndexable
+     *
+     * @return int
+     */
+    public function count(
+        ?string $entityType = null,
+        ?string $apiKey = null,
+        ?Actions $nextAction = null,
+        ?bool $isIndexable = null,
+    ): int;
+
+    /**
+     * @param string $apiKey
+     *
+     * @return string[]
+     */
+    public function getTypes(string $apiKey): array;
 }

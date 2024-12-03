@@ -28,5 +28,5 @@ interface SyncResultInterface
     /**
      * @return int
      */
-    public function getCode(): ?int;
+    public function getCode(): int;
 }

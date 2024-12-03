@@ -18,7 +18,7 @@ interface IndexingAttributesInterface extends FieldsetInterface
     public function hasAttributes(): bool;
 
     /**
-     * @return mixed[][][]
+     * @return array<string, array<string, array<string, string>>>
      */
     public function getAttributes(): array;
 }

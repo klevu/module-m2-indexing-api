@@ -9,17 +9,16 @@ declare(strict_types=1);
 namespace Klevu\IndexingApi\Api\Data;
 
 use Magento\Framework\Api\SearchResultsInterface;
-use Magento\Framework\DataObject;
 
 interface SyncHistoryEntitySearchResultsInterface extends SearchResultsInterface
 {
     /**
-     * @return array<SyncHistoryEntityRecordInterface&DataObject>
+     * @return array<\Klevu\IndexingApi\Api\Data\SyncHistoryEntityRecordInterface&\Magento\Framework\DataObject>
      */
     public function getItems(): array;
 
     /**
-     * @param SyncHistoryEntityRecordInterface[] $items
+     * @param \Klevu\IndexingApi\Api\Data\SyncHistoryEntityRecordInterface[] $items
      *
      * @return $this
      * @throws \InvalidArgumentException
