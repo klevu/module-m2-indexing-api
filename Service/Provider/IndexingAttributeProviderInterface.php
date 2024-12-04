@@ -29,4 +29,26 @@ interface IndexingAttributeProviderInterface
         ?Actions $nextAction = null,
         ?bool $isIndexable = null,
     ): array;
+
+    /**
+     * @param string|null $attributeType
+     * @param string|null $apiKey
+     * @param Actions|null $nextAction
+     * @param bool|null $isIndexable
+     *
+     * @return int
+     */
+    public function count(
+        ?string $attributeType = null,
+        ?string $apiKey = null,
+        ?Actions $nextAction = null,
+        ?bool $isIndexable = null,
+    ): int;
+
+    /**
+     * @param string $apiKey
+     *
+     * @return string[]
+     */
+    public function getTypes(string $apiKey): array;
 }

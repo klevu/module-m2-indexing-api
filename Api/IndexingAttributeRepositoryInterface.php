@@ -10,6 +10,7 @@ namespace Klevu\IndexingApi\Api;
 
 use Klevu\IndexingApi\Api\Data\IndexingAttributeInterface;
 use Klevu\IndexingApi\Api\Data\IndexingAttributeSearchResultsInterface;
+use Klevu\IndexingApi\Model\Source\Actions;
 use Magento\Framework\Api\SearchCriteriaInterface;
 
 interface IndexingAttributeRepositoryInterface
@@ -24,10 +25,14 @@ interface IndexingAttributeRepositoryInterface
 
     /**
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @param bool $collectionSizeRequired
      *
      * @return \Klevu\IndexingApi\Api\Data\IndexingAttributeSearchResultsInterface
      */
-    public function getList(SearchCriteriaInterface $searchCriteria): IndexingAttributeSearchResultsInterface;
+    public function getList(
+        SearchCriteriaInterface $searchCriteria,
+        bool $collectionSizeRequired = false,
+    ): IndexingAttributeSearchResultsInterface;
 
     /**
      * @return \Klevu\IndexingApi\Api\Data\IndexingAttributeInterface
@@ -62,4 +67,26 @@ interface IndexingAttributeRepositoryInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function deleteById(int $indexingAttributeId): void;
+
+    /**
+     * @param string|null $attributeType
+     * @param string|null $apiKey
+     * @param Actions|null $nextAction
+     * @param bool|null $isIndexable
+     *
+     * @return int
+     */
+    public function count(
+        ?string $attributeType = null,
+        ?string $apiKey = null,
+        ?Actions $nextAction = null,
+        ?bool $isIndexable = null,
+    ): int;
+
+    /**
+     * @param string|null $apiKey
+     *
+     * @return string[]
+     */
+    public function getUniqueAttributeTypes(?string $apiKey = null): array;
 }

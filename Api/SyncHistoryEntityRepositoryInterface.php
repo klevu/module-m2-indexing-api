@@ -8,53 +8,50 @@ declare(strict_types=1);
 
 namespace Klevu\IndexingApi\Api;
 
-use Klevu\Indexing\Exception\CouldNotDeleteException;
 use Klevu\IndexingApi\Api\Data\SyncHistoryEntityRecordInterface;
 use Klevu\IndexingApi\Api\Data\SyncHistoryEntitySearchResultsInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
-use Magento\Framework\Exception\AlreadyExistsException;
-use Magento\Framework\Exception\CouldNotSaveException;
-use Magento\Framework\Exception\LocalizedException;
-use Magento\Framework\Exception\NoSuchEntityException;
 
 interface SyncHistoryEntityRepositoryInterface
 {
     /**
-     * @return SyncHistoryEntityRecordInterface
+     * @return \Klevu\IndexingApi\Api\Data\SyncHistoryEntityRecordInterface
      */
     public function create(): SyncHistoryEntityRecordInterface;
 
     /**
      * @param int $entityId
      *
-     * @return SyncHistoryEntityRecordInterface
-     * @throws NoSuchEntityException
+     * @return \Klevu\IndexingApi\Api\Data\SyncHistoryEntityRecordInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function getById(int $entityId): SyncHistoryEntityRecordInterface;
 
     /**
-     * @param SearchCriteriaInterface $searchCriteria
+     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
      *
-     * @return SyncHistoryEntitySearchResultsInterface
+     * @return \Klevu\IndexingApi\Api\Data\SyncHistoryEntitySearchResultsInterface
      */
-    public function getList(SearchCriteriaInterface $searchCriteria): SyncHistoryEntitySearchResultsInterface;
+    public function getList(
+        SearchCriteriaInterface $searchCriteria,
+    ): SyncHistoryEntitySearchResultsInterface;
 
     /**
-     * @param SyncHistoryEntityRecordInterface $syncHistoryEntityRecord
+     * @param \Klevu\IndexingApi\Api\Data\SyncHistoryEntityRecordInterface $syncHistoryEntityRecord
      *
-     * @return SyncHistoryEntityRecordInterface
-     * @throws AlreadyExistsException
-     * @throws NoSuchEntityException
-     * @throws CouldNotSaveException
+     * @return \Klevu\IndexingApi\Api\Data\SyncHistoryEntityRecordInterface
+     * @throws \Magento\Framework\Exception\AlreadyExistsException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @throws \Magento\Framework\Exception\CouldNotSaveException
      */
     public function save(SyncHistoryEntityRecordInterface $syncHistoryEntityRecord): SyncHistoryEntityRecordInterface;
 
     /**
-     * @param SyncHistoryEntityRecordInterface $syncHistoryEntityRecord
+     * @param \Klevu\IndexingApi\Api\Data\SyncHistoryEntityRecordInterface $syncHistoryEntityRecord
      *
      * @return void
-     * @throws CouldNotDeleteException
-     * @throws LocalizedException
+     * @throws \Klevu\Indexing\Exception\CouldNotDeleteException
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function delete(SyncHistoryEntityRecordInterface $syncHistoryEntityRecord): void;
 
@@ -62,9 +59,9 @@ interface SyncHistoryEntityRepositoryInterface
      * @param int $entityId
      *
      * @return void
-     * @throws CouldNotDeleteException
-     * @throws LocalizedException
-     * @throws NoSuchEntityException
+     * @throws \Klevu\Indexing\Exception\CouldNotDeleteException
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function deleteById(int $entityId): void;
 }
