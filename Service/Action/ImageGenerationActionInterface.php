@@ -14,10 +14,10 @@ interface ImageGenerationActionInterface
      * @param mixed[] $imageParams
      * @param string $imagePath
      *
-     * @return string
+     * @return string|null
      */
     public function execute(
         array $imageParams,
         string $imagePath,
-    ): string;
+    ): ?string;
 }

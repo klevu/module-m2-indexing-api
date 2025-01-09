@@ -17,7 +17,7 @@ interface ImageGeneratorServiceInterface
      * @param int|null $height
      * @param int|null $storeId
      *
-     * @return string
+     * @return string|null
      */
     public function execute(
         string $imagePath,
@@ -25,5 +25,5 @@ interface ImageGeneratorServiceInterface
         ?int $width = null,
         ?int $height = null,
         ?int $storeId = null,
-    ): string;
+    ): ?string;
 }
