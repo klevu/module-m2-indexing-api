@@ -16,6 +16,16 @@ interface DiscoveryResultInterface
     public function isSuccess(): bool;
 
     /**
+     * @return string
+     */
+    public function getAction(): string;
+
+    /**
+     * @return string
+     */
+    public function getEntityType(): string;
+
+    /**
      * @return bool
      */
     public function hasMessages(): bool;

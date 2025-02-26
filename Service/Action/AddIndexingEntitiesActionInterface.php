@@ -15,10 +15,10 @@ interface AddIndexingEntitiesActionInterface
 {
     /**
      * @param string $type
-     * @param MagentoEntityInterface[] $magentoEntities
+     * @param \Generator<MagentoEntityInterface> $magentoEntities
      *
      * @return void
      * @throws IndexingEntitySaveException
      */
-    public function execute(string $type, array $magentoEntities): void;
+    public function execute(string $type, \Generator $magentoEntities): void;
 }

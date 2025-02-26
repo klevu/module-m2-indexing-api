@@ -18,12 +18,12 @@ interface FilterEntitiesToDeleteServiceInterface
      * @param string[] $apiKeys
      * @param string[] $entitySubtypes
      *
-     * @return int[]
+     * @return \Generator<int[]>
      */
     public function execute(
         array $klevuIndexingEntities,
         string $type,
         array $apiKeys = [],
         array $entitySubtypes = [],
-    ): array;
+    ): \Generator;
 }

@@ -17,11 +17,11 @@ interface EntitySyncOrchestratorServiceInterface
      * @param string[] $apiKeys
      * @param string|null $via
      *
-     * @return IndexerResultInterface[]
+     * @return \Generator<IndexerResultInterface>
      */
     public function execute(
         array $entityTypes = [],
         array $apiKeys = [],
         ?string $via = null,
-    ): array;
+    ): \Generator;
 }

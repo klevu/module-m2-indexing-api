@@ -18,12 +18,12 @@ interface EntityDiscoveryOrchestratorServiceInterface
      * @param int[]|null $entityIds
      * @param string[]|null $entitySubtypes
      *
-     * @return DiscoveryResultInterface
+     * @return \Generator<\Generator<DiscoveryResultInterface>>
      */
     public function execute(
         array $entityTypes = [],
         array $apiKeys = [],
-        ?array $entityIds = [],
+        ?array $entityIds = null,
         ?array $entitySubtypes = [],
-    ): DiscoveryResultInterface;
+    ): \Generator;
 }

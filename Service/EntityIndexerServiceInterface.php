@@ -17,11 +17,11 @@ interface EntityIndexerServiceInterface
      * @param string $apiKey
      * @param string|null $via
      *
-     * @return IndexerResultInterface
+     * @return \Generator<IndexerResultInterface>
      * @throws InvalidPipelineConfigurationException
      */
     public function execute(
         string $apiKey,
         ?string $via = '',
-    ): IndexerResultInterface;
+    ): \Generator;
 }
