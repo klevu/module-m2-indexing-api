@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Klevu\IndexingApi\Service;
 
-use Klevu\IndexingApi\Api\Data\DiscoveryResultInterface;
 use Klevu\IndexingApi\Model\Update\EntityInterface as EntityUpdateInterface;
 
 interface EntityUpdateOrchestratorServiceInterface
@@ -16,7 +15,7 @@ interface EntityUpdateOrchestratorServiceInterface
     /**
      * @param EntityUpdateInterface $entityUpdate
      *
-     * @return DiscoveryResultInterface
+     * @return void
      */
-    public function execute(EntityUpdateInterface $entityUpdate): DiscoveryResultInterface;
+    public function execute(EntityUpdateInterface $entityUpdate): void;
 }

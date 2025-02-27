@@ -13,10 +13,10 @@ use Klevu\Indexing\Exception\IndexingEntitySaveException;
 interface SetIndexingEntitiesToNotBeIndexableActionInterface
 {
     /**
-     * @param int[] $entityIds
+     * @param \Generator<int[]> $entityIds
      *
      * @return void
      * @throws IndexingEntitySaveException
      */
-    public function execute(array $entityIds): void;
+    public function execute(\Generator $entityIds): void;
 }

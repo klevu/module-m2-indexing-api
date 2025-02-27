@@ -8,24 +8,22 @@ declare(strict_types=1);
 
 namespace Klevu\IndexingApi\Service;
 
-use Klevu\IndexingApi\Model\MagentoEntityInterface;
+use Klevu\IndexingApi\Api\Data\IndexingEntityInterface;
 
 interface FilterEntitiesToSetToIndexableServiceInterface
 {
     /**
-     * @param MagentoEntityInterface[] $magentoEntities
+     * @param IndexingEntityInterface[] $klevuIndexingEntities
      * @param string $type
-     * @param string $apiKey
-     * @param int[]|null $entityIds
+     * @param string[] $apiKeys
      * @param string[]|null $entitySubtypes
      *
-     * @return int[]
+     * @return \Generator<int[]>
      */
     public function execute(
-        array $magentoEntities,
+        array $klevuIndexingEntities,
         string $type,
-        string $apiKey,
-        ?array $entityIds = [],
+        array $apiKeys,
         ?array $entitySubtypes = [],
-    ): array;
+    ): \Generator;
 }

@@ -13,7 +13,7 @@ interface FilterEntitiesToUpdateServiceInterface
     /**
      * @param string $type
      * @param int[] $entityIds
-     * @param string $apiKey
+     * @param string[] $apiKeys
      * @param string[]|null $entitySubtypes
      *
      * @return \Generator<int[]>
@@ -21,7 +21,7 @@ interface FilterEntitiesToUpdateServiceInterface
     public function execute(
         string $type,
         array $entityIds,
-        string $apiKey,
+        array $apiKeys,
         ?array $entitySubtypes = [],
     ): \Generator;
 }
