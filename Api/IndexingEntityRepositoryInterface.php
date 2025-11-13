@@ -49,6 +49,20 @@ interface IndexingEntityRepositoryInterface
      */
     public function save(IndexingEntityInterface $indexingEntity): IndexingEntityInterface;
 
+    /**
+     * @param IndexingEntityInterface $indexingEntity
+     *
+     * @return void
+     */
+    public function addForBatchSave(IndexingEntityInterface $indexingEntity): void;
+
+    /**
+     * @param int $minimumBatchSize
+     *
+     * @return void
+     */
+    public function saveBatch(int $minimumBatchSize): void;
+
     //phpcs:disable Security.BadFunctions.FilesystemFunctions.WarnFilesystem
     /**
      * @param \Klevu\IndexingApi\Api\Data\IndexingEntityInterface $indexingEntity
