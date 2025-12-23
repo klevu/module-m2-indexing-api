@@ -148,9 +148,70 @@ interface IndexingEntityInterface
     public function setIsIndexable(bool $isIndexable): void;
 
     /**
+     * @return bool
+     */
+    public function getRequiresUpdate(): bool;
+
+    /**
+     * @param bool $requiresUpdate
+     *
+     * @return void
+     */
+    public function setRequiresUpdate(bool $requiresUpdate): void;
+
+    /**
+     * @return string[]|int[]|float[]|bool[]
+     */
+    public function getRequiresUpdateOrigValues(): array;
+
+    /**
+     * @param string[]|int[]|float[]|bool[] $values
+     *
+     * @return void
+     */
+    public function setRequiresUpdateOrigValues(array $values): void;
+
+    /**
+     * @param string $criteria
+     * @param mixed $value
+     *
+     * @return void
+     */
+    public function addRequiresUpdateOrigValue(string $criteria, mixed $value): void;
+
+    /**
+     * @return string|null
+     */
+    public function getCreatedAt(): ?string;
+
+    /**
+     * @param string|null $createdAt
+     *
+     * @return void
+     */
+    public function setCreatedAt(?string $createdAt = null): void;
+
+    /**
+     * @return string|null
+     */
+    public function getUpdatedAt(): ?string;
+
+    /**
+     * @param string|null $updatedAt
+     *
+     * @return void
+     */
+    public function setUpdatedAt(?string $updatedAt = null): void;
+
+    /**
      * @param mixed[] $keys
      *
      * @return mixed[]
      */
     public function toArray(array $keys = []); //phpcs:ignore SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint, Generic.Files.LineLength.TooLong
+
+    /**
+     * @return bool
+     */
+    public function hasDataChanges(); //phpcs:ignore SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint, Generic.Files.LineLength.TooLong
 }
