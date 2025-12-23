@@ -134,4 +134,28 @@ interface IndexingAttributeInterface
      * @return void
      */
     public function setIsIndexable(bool $isIndexable): void;
+
+    /**
+     * @return string|null
+     */
+    public function getCreatedAt(): ?string;
+
+    /**
+     * @param string|null $createdAt
+     *
+     * @return void
+     */
+    public function setCreatedAt(?string $createdAt = null): void;
+
+    /**
+     * @return string|null
+     */
+    public function getUpdatedAt(): ?string;
+
+    /**
+     * @param string|null $updatedAt
+     *
+     * @return void
+     */
+    public function setUpdatedAt(?string $updatedAt = null): void;
 }
